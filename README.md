@@ -1,2 +1,1 @@
-# C-lculo-Num-rico
-Methods
+# Cálculo-Numérico
