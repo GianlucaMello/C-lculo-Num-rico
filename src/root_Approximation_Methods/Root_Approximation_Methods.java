@@ -1,8 +1,8 @@
-package AproximationMethods;
+package root_Approximation_Methods;
 
 import static java.lang.Math.pow;
 
-public class AproximationMethods {
+public class Root_Approximation_Methods{
 
 	public static void main(String[] args) {
 		double err = 0.001, x0 = 1, x1 = 2;
@@ -98,9 +98,9 @@ public class AproximationMethods {
         System.out.println("I\tXn\tErro\n");
         do{
             erro = AbsolutErr(x0, x1);
-            System.out.format("%d\t%.5f\t%.5f\n", i++, Func(x1), erro);
+            System.out.format("%d\t%.5f\t%.5f\n", i++, Funcao(x1), erro);
             x0 = x1;
-            x1 = Func(x1);
+            x1 = Funcao(x1);
         } while(erro > y);
         
         
