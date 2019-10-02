@@ -18,3 +18,4 @@ Métodos para resolver sistemas lineares:
 Métodos Iterativos para resolver sistemas lineares:
       Gauss-Jacobi
       Gauss-Seidel
+	  
