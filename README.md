@@ -11,6 +11,7 @@ Métodos utilizados na matéria de Cálculo numérico, 4ª fase de ciência da c
     Secante
 
 
+
 Métodos para resolver sistemas lineares:
 
 --Para matrizes quadradas de ordem nXn
@@ -18,6 +19,7 @@ Métodos para resolver sistemas lineares:
 	Eliminação Gaussiana
 	Eliminação Gaussiana com Pivoteamento Parcial
 	Eliminação Gaussiana com Pivoteamento Total
+
 
 
 Métodos Iterativos para resolver sistemas lineares:
