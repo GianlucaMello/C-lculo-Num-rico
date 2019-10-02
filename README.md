@@ -2,18 +2,18 @@
 
 Métodos utilizados na matéria de Cálculo numérico, 4ª fase de ciência da computação do IFSC câmpus Lages.
 
+  Métodos Iterativos para encontrar raiz aproximada:
 
-Métodos Iterativos para encontrar raiz aproximada:
-
-	Bissecção
-	Regula Falsi
-	Ponto Fixo
-	Newton
-	Secante
+    Bissecção
+    Regula Falsi
+    Ponto Fixo
+    Newton
+    Secante
 
 
 Métodos para resolver sistemas lineares:
-	Para matrizes quadradas de ordem nXn
+
+--Para matrizes quadradas de ordem nXn
 
 	Eliminação Gaussiana
 	Eliminação Gaussiana com Pivoteamento Parcial
@@ -21,7 +21,8 @@ Métodos para resolver sistemas lineares:
 
 
 Métodos Iterativos para resolver sistemas lineares:
-	Para matrizes quadradas de ordem nXn
+
+--Para matrizes quadradas de ordem nXn
 
 	Gauss-Jacobi
 	Gauss-Seidel
