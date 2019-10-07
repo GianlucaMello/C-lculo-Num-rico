@@ -9,7 +9,7 @@ import utilities.Print;
  * @author gianluca.mello
  *
  */
-public class Gauss_Elimination_Total_Pivoting {
+public class Gaussian_Elimination_Total_Pivoting {
 	private static void method(double matrix[][]) {
 		String[] vetorX = new String[matrix.length];
 		String auxX;

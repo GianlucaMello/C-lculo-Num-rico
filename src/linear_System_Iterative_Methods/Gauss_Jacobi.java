@@ -68,7 +68,7 @@ public class Gauss_Jacobi {
 			// print error
 			System.out.format("Erro: %.4f\n", err);
 			System.out.println("---------------------------------");
-		} while (err > tol);
+		} while (!(err < tol || count > 50));
 		System.out.println("Gauss-Jacobi Method");
 	}
 }
