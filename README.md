@@ -19,6 +19,7 @@ Métodos para resolver sistemas lineares:
 	Eliminação Gaussiana
 	Eliminação Gaussiana com Pivoteamento Parcial
 	Eliminação Gaussiana com Pivoteamento Total
+	Decomposição LU
 
 
 
