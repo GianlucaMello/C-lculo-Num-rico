@@ -10,8 +10,8 @@ import java.lang.Math;
 public class Cholesky_Decomposition {
 	public static void method(double A[][], double b[]) {
 		double sum = 0;
-		double[] y = new double[A.length];
-		double[][] G = new double[A.length][A.length];
+		double[] y = new double[A.length], x = new double[A.length];
+		double[][] G = new double[A.length][A.length], Gt = new double[A.length][A.length];
 
 		System.out.println("Matrix A");
 		Print.printMatrix(A, b);
@@ -38,10 +38,20 @@ public class Cholesky_Decomposition {
 				}
 			}
 		}
+		//Fill Gt
+		for(int i=0; i<Gt.length; i++) {
+			for(int j=0; j<Gt.length; j++) {
+				Gt[j][i] = G[i][j];
+			}
+		}
 		
 		//print the matrix G
 		System.out.println("Matrix G:");
 		Print.printMatrix(G, b);
+		
+		//print the matrix Gt
+		System.out.println("Matrix Gt:");
+		Print.printMatrix(Gt, b);
 		
 		
 		//Discovery the values of array Y
@@ -60,14 +70,27 @@ public class Cholesky_Decomposition {
 		System.out.println("Array y: ");
 		Print.printArray(y);
 		
-		//verify if Gt(sum) is equal to y
-		for(int i=0; i<G.length; i++) {
+		
+		
+		//gT*x=y
+		for(int i = G.length-1; i>=0; i--) {
 			sum=0;
-			for(int j=0; j<G.length; j++) {
-				sum+=G[j][i];
+			for(int j=i+1; j<G.length; j++) {
+				sum += Gt[i][j]*x[j];
 			}
-			System.out.format("%f = %f\n", sum,y[i]);
+			x[i] = (y[i]-sum)/Gt[i][i];
 		}
+		
+		System.out.println("Array x: ");
+		Print.printArray(x);
+		
+		//verify if Gt(sum) is equal to y
+//		for(int i=0; i<G.length; i++) {
+//			sum=0;
+//			for(int j=0; j<G.length; j++) {
+//				sum+=G[j][i];
+//			}
+//			System.out.format("%f = %f\n", sum,y[i]);
+//		}
 	}
 }
-
