@@ -10,7 +10,7 @@ import utilities.Print;
  *
  */
 public class Gaussian_Elimination {
-	private static void method(double matrix[][]) {
+	public static void method(double matrix[][]) {
 		double mult = 1, sum = 0;
 		double[] b = new double[matrix.length];
 
@@ -33,7 +33,7 @@ public class Gaussian_Elimination {
 		Print.printMatrix(matrix);
 
 		// calcula o valor de Xn
-		b[matrix.length - 1] = matrix[matrix.length - 1][matrix.length] / matrix[matrix.length - 1][matrix.length - 1];
+		//b[matrix.length - 1] = matrix[matrix.length - 1][matrix.length] / matrix[matrix.length - 1][matrix.length - 1];
 
 		// Calcula o valor de Xn-1 até x1, do último para o primeiro
 		for (int i = matrix.length - 1; i >= 0; i--) {

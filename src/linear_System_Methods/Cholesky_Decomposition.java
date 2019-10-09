@@ -1,77 +1,72 @@
 package linear_System_Methods;
 
 import utilities.Print;
+import java.lang.Math;
 
 /**
  * @author gianluca.mello
  *
  */
 public class Cholesky_Decomposition {
-	public static void method(double matrix[][], double b[]) {
-		double mult = 1, sum = 0;
-		double[] y = new double[matrix.length], x = new double[matrix.length];
-		double[][] lu = new double[matrix.length][matrix.length];
-		double[][] D = new double[matrix.length][matrix.length];
+	public static void method(double A[][], double b[]) {
+		double sum = 0;
+		double[] y = new double[A.length];
+		double[][] G = new double[A.length][A.length];
 
-		System.out.println("Matrix");
-		for (int i = 0; i < matrix.length; i++) {
-			Print.printMatrix(matrix);
-			System.out.println();
-
-			// Transforma a matriz em uma triangular superior
-			System.out.println("Zerando a coluna " + i);
-			for (int j = 0; j < matrix.length; j++) {
-				if(j == i) {
-					lu[i][i] = 1;
+		System.out.println("Matrix A");
+		Print.printMatrix(A, b);
+		//Create the lower matrix
+		for(int k=0; k<A.length; k++) {
+			for(int i=0; i<A.length; i++) {
+				sum=0;
+				if(A[k][i]!=A[i][k]) {
+					System.out.format("Erro, as posicoes: A[%d][%d] e A[%d][%d] nao sao iguais!!!",i,k, k,i);
+					return;
 				}
-				if (i < j) {
-					mult = matrix[j][i] / matrix[i][i];
-					lu[j][i] = mult;
-					lu[i][j] = 0;
-					for (int k = 0; k < matrix[0].length; k++) {
-						matrix[j][k] = matrix[j][k] - mult * matrix[i][k];
+				if(k==i) {
+					for(int j=0; j<k; j++) {
+						sum += Math.pow(G[k][j],2);
 					}
+					G[k][k]=Math.sqrt(A[k][k]-sum);
+				}else if(k>i) {
+					for(int j=0; j<i; j++) {
+						sum += G[i][j]*G[k][j];
+					}
+					G[k][i]=(A[k][i]-sum)/G[i][i];
+				} else{
+					G[k][i]=0;
 				}
 			}
 		}
-		Print.printMatrix(matrix);
 		
-		System.out.println("L:");
-		Print.printMatrix(lu);
+		//print the matrix G
+		System.out.println("Matrix G:");
+		Print.printMatrix(G, b);
 		
-		System.out.println("U:");
-		Print.printMatrix(matrix);
 		
-		System.out.println("b:");
-		Print.printVector(b);
-
-		// Calcula o valor de y1 até yn, do primeiro para o último
-		for (int i = 0; i < y.length; i++) {
-			sum = 0;
-			for (int j = 0; j<i; j++) {
-				sum += lu[i][j]*y[j];
+		//Discovery the values of array Y
+		for(int i=0; i<A.length; i++) {
+			sum=0;
+			for(int j=0; i>j; j++) {
+				sum+= G[i][j]*y[j];
 			}
-			y[i] = (b[i] - sum) / lu[i][i];
+			y[i]=(b[i]-sum)/G[i][i];
 		}
 		
-		System.out.println("Y:");
-		Print.printVector(y);
+		//print array b
+		System.out.println("Array b: ");
+		Print.printArray(b);
+		//print array y
+		System.out.println("Array y: ");
+		Print.printArray(y);
 		
-		//Calcula o valor de xN, até x1, do último para o primeiro
-		for (int i = matrix.length - 1; i >= 0; i--) {
-			sum = 0;
-			for (int j = i+1; j <matrix.length; j++) {
-				sum += matrix[i][j]*x[j];
+		//verify if Gt(sum) is equal to y
+		for(int i=0; i<G.length; i++) {
+			sum=0;
+			for(int j=0; j<G.length; j++) {
+				sum+=G[j][i];
 			}
-			x[i] = (y[i]- sum) / matrix[i][i];
-		}
-		
-		System.out.println("X:");
-		Print.printVector(x);
-		
-		System.out.println("\nThe solution is: ");
-		for (int i = 0; i < x.length; i++) {
-			System.out.format("x%d = %.5f\n", i, x[i]);
+			System.out.format("%f = %f\n", sum,y[i]);
 		}
 	}
 }

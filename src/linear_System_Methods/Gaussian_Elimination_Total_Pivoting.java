@@ -10,7 +10,7 @@ import utilities.Print;
  *
  */
 public class Gaussian_Elimination_Total_Pivoting {
-	private static void method(double matrix[][]) {
+	public static void method(double matrix[][]) {
 		String[] vetorX = new String[matrix.length];
 		String auxX;
 		int l = 0, c = 0;

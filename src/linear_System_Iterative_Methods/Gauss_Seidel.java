@@ -19,7 +19,7 @@ public class Gauss_Seidel {
 
 		// print array x0
 		System.out.print("x0: ");
-		Print.printVector(x0);
+		Print.printArray(x0);
 		System.out.println("---------------------------------");
 
 		// x0[i]=sup/inf;
@@ -46,7 +46,7 @@ public class Gauss_Seidel {
 
 				// print array x0
 				System.out.print("x0: ");
-				Print.printVector(x0);
+				Print.printArray(x0);
 			}
 
 			// print tolerance

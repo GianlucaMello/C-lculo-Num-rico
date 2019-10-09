@@ -24,7 +24,7 @@ public class Gauss_Jacobi {
 
 		// print array x0
 		System.out.print("x0: ");
-		Print.printVector(x0);
+		Print.printArray(x0);
 		System.out.println("---------------------------------");
 
 		// x1=sup/inf;
@@ -52,11 +52,11 @@ public class Gauss_Jacobi {
 
 			// print array x0
 			System.out.print("x" + count + ": ");
-			Print.printVector(x0);
+			Print.printArray(x0);
 
 			// print array x1
 			System.out.print("x" + ++count + ": ");
-			Print.printVector(x1);
+			Print.printArray(x1);
 
 			// fill in the array x0 with the values of array x1
 			for (int i = 0; i < x0.length; i++) {

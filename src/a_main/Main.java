@@ -5,6 +5,10 @@ package a_main;
 
 import linear_System_Iterative_Methods.Gauss_Jacobi;
 import linear_System_Iterative_Methods.Gauss_Seidel;
+import linear_System_Methods.Cholesky_Decomposition;
+import linear_System_Methods.Gaussian_Elimination;
+import linear_System_Methods.Gaussian_Elimination_Partial_Pivoting;
+import linear_System_Methods.Gaussian_Elimination_Total_Pivoting;
 import linear_System_Methods.LU_Decomposition;
 
 /**
@@ -19,10 +23,18 @@ public class Main {
 	public static void main(String[] args) {
 
 		// Matrix C
-		double C[][] = new double[][] { { 4, 3, 2, 1 }, { 2, 2, 1, 1 }, { 1, -1, 2, -1 }, { 3, 2, -3, -2 } };
+		double C[][] = new double[][] {
+			{16,4,8,4,32},
+			{4,10,8,4,26},
+			{8,8,12,10,38},
+			{4,4,10,12,30}};
+			
+//			{20,7,9},
+//			{7,30,8},
+//			{9,8,30}
 
 		// Array g
-		double g[] = new double[] { 12,  7, 1, 4};
+		double g[] = new double[] {32,26,38,30};
 
 		// Array with the inicial values of x0
 		double x0[] = new double[] {1,2,1,0};
@@ -70,9 +82,14 @@ public class Main {
 		Gauss_Seidel seidel = new Gauss_Seidel();
 
 		LU_Decomposition lu = new LU_Decomposition();
+		Cholesky_Decomposition cholesky = new Cholesky_Decomposition();
+		Gaussian_Elimination gauss = new Gaussian_Elimination();
+		Gaussian_Elimination_Partial_Pivoting gauss_p = new Gaussian_Elimination_Partial_Pivoting();
+		Gaussian_Elimination_Total_Pivoting gauss_t = new Gaussian_Elimination_Total_Pivoting();
+		//cholesky.method(C, g);
+		gauss.method(C);
 		
-
-		jacobi.method(C, g, x0, tol);
+		//jacobi.method(C, g, x0, tol);
 		// seidel.method(C, g, x1, tol);
 
 		

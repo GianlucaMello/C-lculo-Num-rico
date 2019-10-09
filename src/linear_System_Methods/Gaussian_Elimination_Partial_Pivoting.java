@@ -10,7 +10,7 @@ import utilities.Print;
  *
  */
 public class Gaussian_Elimination_Partial_Pivoting {
-	private static void method(double matrix[][]) {
+	public static void method(double matrix[][]) {
 		int l = 0;
 		double mult, sum, max = 0;
 		double[] b = new double[matrix.length];

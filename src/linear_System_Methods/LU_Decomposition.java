@@ -45,7 +45,7 @@ public class LU_Decomposition {
 		Print.printMatrix(matrix);
 		
 		System.out.println("b:");
-		Print.printVector(b);
+		Print.printArray(b);
 
 		// Calcula o valor de y1 até yn, do primeiro para o último
 		for (int i = 0; i < y.length; i++) {
@@ -57,7 +57,7 @@ public class LU_Decomposition {
 		}
 		
 		System.out.println("Y:");
-		Print.printVector(y);
+		Print.printArray(y);
 		
 		//Calcula o valor de xN, até x1, do último para o primeiro
 		for (int i = matrix.length - 1; i >= 0; i--) {
@@ -69,7 +69,7 @@ public class LU_Decomposition {
 		}
 		
 		System.out.println("X:");
-		Print.printVector(x);
+		Print.printArray(x);
 		
 		System.out.println("\nThe solution is: ");
 		for (int i = 0; i < x.length; i++) {
