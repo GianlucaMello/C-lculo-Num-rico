@@ -21,6 +21,7 @@ Métodos para resolver sistemas lineares:
 	Eliminação Gaussiana com Pivoteamento Total
 	Eliminação Gauss Jordan
 	Decomposição LU
+	Decomposição Cholesky
 
 
 
