@@ -6,6 +6,7 @@ package a_main;
 import linear_System_Iterative_Methods.Gauss_Jacobi;
 import linear_System_Iterative_Methods.Gauss_Seidel;
 import linear_System_Methods.Cholesky_Decomposition;
+import linear_System_Methods.Gauss_Jordan_Elimination;
 import linear_System_Methods.Gaussian_Elimination;
 import linear_System_Methods.Gaussian_Elimination_Partial_Pivoting;
 import linear_System_Methods.Gaussian_Elimination_Total_Pivoting;
@@ -24,10 +25,10 @@ public class Main {
 
 		// Matrix C
 		double C[][] = new double[][] {
-			{16,4,8,4,32},
-			{4,10,8,4,26},
-			{8,8,12,10,38},
-			{4,4,10,12,30}};
+			{16,4,8,4},
+			{4,10,8,4},
+			{8,8,12,10},
+			{4,4,10,12}};
 			
 //			{20,7,9},
 //			{7,30,8},
@@ -86,8 +87,10 @@ public class Main {
 		Gaussian_Elimination gauss = new Gaussian_Elimination();
 		Gaussian_Elimination_Partial_Pivoting gauss_p = new Gaussian_Elimination_Partial_Pivoting();
 		Gaussian_Elimination_Total_Pivoting gauss_t = new Gaussian_Elimination_Total_Pivoting();
+		Gauss_Jordan_Elimination jordan = new Gauss_Jordan_Elimination();
+		jordan.method(C, g);
 		//cholesky.method(C, g);
-		gauss.method(C);
+		//gauss.method(C);
 		
 		//jacobi.method(C, g, x0, tol);
 		// seidel.method(C, g, x1, tol);

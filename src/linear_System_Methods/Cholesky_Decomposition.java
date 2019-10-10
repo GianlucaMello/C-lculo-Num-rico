@@ -10,7 +10,7 @@ import java.lang.Math;
 public class Cholesky_Decomposition {
 	public static void method(double A[][], double b[]) {
 		double sum = 0;
-		double[] y = new double[A.length], x = new double[A.length];
+		double[] y = new double[b.length], x = new double[b.length];
 		double[][] G = new double[A.length][A.length], Gt = new double[A.length][A.length];
 
 		System.out.println("Matrix A");
